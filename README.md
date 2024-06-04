@@ -5,9 +5,6 @@ Fetch API練習，使用Google API串接資料。
 ## 專案渲染 App.js
 view渲染: `<ModeView/>`
 
-- PageA:
-<img src="https://github.com/tangcamy/fetchAPI_GoogleAPI-ReactNative/blob/main/src/demo/Book_HomeScreen.png" alt="PageB" width="200" height="350" />
-- PageB:
 <img src="https://github.com/tangcamy/fetchAPI_GoogleAPI-ReactNative/blob/main/src/demo/Book_HomeScreenDetail.png" alt="PageB" width="200" height="350" />
 
 ## Environment SetUp - 環境建置
@@ -24,13 +21,13 @@ view渲染: `<ModeView/>`
 1. 打開你的 terminal，Clone 此專案至本機電腦
 
 ```
-git clone https://github.com/tangcamy/ButtonsPage_ReactNative.git
+git clone https://github.com/tangcamy/fetchAPI_GoogleAPI-ReactNative.git
 ```
 
 2. 開啟終端機(Terminal)，進入存放此專案的資料夾
 
 ```
-cd ButtonsPage_ReactNative
+cd fetchAPI_GoogleAPI-ReactNative
 ```
 
 3. 安裝 npm 套件，在 Terminal 輸入 
