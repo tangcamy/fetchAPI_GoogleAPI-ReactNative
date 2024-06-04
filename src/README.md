@@ -6,7 +6,8 @@ Fetch API練習，使用Google API串接資料。
 view渲染: `<ModeView/>`
 
 - PageA:
-<img src="https://github.com/tangcamy/fetchAPI_GoogleAPI-ReactNative/blob/main/src/demo/Book_HomeScreen.png" alt="PageB" width="200" height="350" />
+<img src="https://github.com/tangcamy/fetchAPI_GoogleAPI-ReactNative/blob/main/src/demo/Books_HomeScreen.png" alt="PageA" width="200" height="350" />
+
 - PageB:
 <img src="https://github.com/tangcamy/fetchAPI_GoogleAPI-ReactNative/blob/main/src/demo/Book_HomeScreenDetail.png" alt="PageB" width="200" height="350" />
 
