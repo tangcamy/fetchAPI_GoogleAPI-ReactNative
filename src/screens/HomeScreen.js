@@ -5,6 +5,7 @@ import {CustomButtonStyle} from '../components/ButtonFunc'
 import AnimatedCursor from "react-animated-cursor"
 
 import { TouchableWithoutFeedback } from 'react-native'
+import * as StorageHelper from '../helpers/StorageHelpers'
 
 var MOCKED_DATA = [
     {
@@ -48,11 +49,34 @@ export default function HomeScreen(props) {
     // })
 
 
+    //API資料更新
     useEffect(()=>{
         fetchData()
     },[])
     
-    //資料傳遞函式
+    // 講有打勾的addToList資料，更新至Setting主頁
+    useEffect(()=>{
+        let getAllAddList = []
+        dataSource.map(a=>{
+            if (a.addToList === true){
+                getAllAddList.push(a)
+            }
+        })
+        saveToStorage(getAllAddList)
+
+    })
+    
+    //因儲存到Storage為非同步資料需使用 async / await
+    const saveToStorage = async (getAddBookList) => {
+        try {
+            await StorageHelper.setMySetting('myAddBookList', JSON.stringify(getAddBookList))
+        } catch (err) {
+            console.log(err)
+        }
+
+    }
+
+    //主頁完到子頁，資料傳遞函式
     function showNoticeDetail(cases){
         return(
             props.navigation.push('HomeDetailScreen',{infoData:cases})
@@ -72,15 +96,34 @@ export default function HomeScreen(props) {
             })
 
     }
+    function pressRow(cases){
+        const newDatas = dataSource.map(data=>{
+            //先將資料一筆筆讀出來，儲存至新的變數中
+            let copyA = {...data}
+            //比對欄位key值，並將結果儲存至新增欄位的key
+            if (copyA.id === cases.id){
+                //如果原本是true變false,false變true
+                copyA.addToList =! copyA.addToList 
+            }
+            //copyA.addToList更新至copyA
+            return copyA
+        })
+        //最後useState更新
+        setDataSource(newDatas)
+    }
+
     //排版渲染
    const renderInfo = (cases) => {
-
         return (
             <View>
                 <TouchableOpacity onPress={() => showNoticeDetail(cases)} >
                     
                     <View>
                         <View style={styles.MainView}>
+                            <TouchableOpacity onPress={()=>pressRow(cases)}>
+                               { cases.addToList === true ? <Image source={require('../../assets/square_check.png')} style={styles.imageCheck}/> : <Image source={require('../../assets/square_non_check.png')} style={styles.imageCheck}/>}
+                            </TouchableOpacity>
+
                             <Image 
                             source={{uri:cases.volumeInfo.imageLinks.smallThumbnail}} style={styles.imageIcon}/>  
 
@@ -95,19 +138,16 @@ export default function HomeScreen(props) {
                                <Text ellipsizeMode='tail' numberOfLines={4} style={[styles.textType,{ color: cases.volumeInfo.publishedDate ? 'gray' : 'red', fontSize: 14,marginTop:2}]}>
                                     {cases.volumeInfo.publishedDate ? '出版日期:'+cases.volumeInfo.publishedDate : '< 資料沒有標註出版日期 >'}
                                 </Text>
-
                             </View>
-                            <Image 
-                            source={require('../image/ic_arrow_right.png')} style={styles.imageArrow} 
-                            />                 
+
+                            <Image source={require('../image/ic_arrow_right.png')} style={styles.imageArrow} />
+
                         </View>
                         <View style={styles.deliverLine} />
                     </View>
                 </TouchableOpacity>
             </View>
-
         )
-
     }
 
     return (

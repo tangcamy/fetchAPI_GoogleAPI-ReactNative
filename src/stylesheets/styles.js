@@ -34,15 +34,20 @@ export default StyleSheet.create({
   },
   imageArrow: {
     width: 20,
-    height: 40,
-    marginRight:10
+    height: 30,
+    marginRight:5
   },
   imageIcon:{
     width:60,
     height:60,
     marginRight:10
   },
-    imageSave:{
+  imageCheck:{
+   width:20,
+   height:20,
+   marginRight:15
+  },
+  imageSave:{
     width:200,
     height:275,
     marginRight:5,

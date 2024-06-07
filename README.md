@@ -6,10 +6,22 @@ Fetch API練習，使用Google API串接資料。
 view渲染: `<ModeView/>`
 
 ## Demo照片
-- PageA
-<img src="https://github.com/tangcamy/fetchAPI_GoogleAPI-ReactNative/blob/main/src/demo/Books_HomeScreen.png" alt="PageA" width="200" height="350" />
-- PageB
-<img src="https://github.com/tangcamy/fetchAPI_GoogleAPI-ReactNative/blob/main/src/demo/Book_HomeScreenDetail.png" alt="PageB" width="200" height="350" />
+###  HomeScreen.js 
+- 主頁面
+<img src="https://github.com/tangcamy/fetchAPI_GoogleAPI-ReactNative/blob/main/src/demo/Books_HomeScreen.png" alt="HomeScreen" width="200" height="350" />
+
+- 可勾選頁面
+<img src="https://github.com/tangcamy/fetchAPI_GoogleAPI-ReactNative/blob/main/src/demo/Books_HomeScreen_select.png" alt="SelectHomeScreen" width="200" height="350" />
+
+###  HomeScreenDetail.js：主頁面點進去的子頁面，顯示書本的細部資訊
+<img src="https://github.com/tangcamy/fetchAPI_GoogleAPI-ReactNative/blob/main/src/demo/Book_HomeScreenDetail.png" alt="HomeScreenDetail" width="200" height="350" />
+
+### SettingScreen.js:被勾選清單
+<img src="https://github.com/tangcamy/fetchAPI_GoogleAPI-ReactNative/blob/main/src/demo/Books_Settings.png" alt="HomeScreenDetail" width="200" height="350" />
+
+### SettingDetailScreen.js:被勾選清點，點進去的說明
+<img src="https://github.com/tangcamy/fetchAPI_GoogleAPI-ReactNative/blob/main/src/demo/Books_SettingsDetail.png" alt="HomeScreenDetail" width="200" height="350" />
+
 
 ## Environment SetUp - 環境建置
   - nvm 安裝 Node.js (14.16.0) - mac 
