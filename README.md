@@ -24,13 +24,16 @@ view渲染: `<ModeView/>`
 
 
 ## Environment SetUp - 環境建置
-  - nvm 安裝 Node.js (14.16.0) - mac 
+  - nvm 安裝 Node.js (20.11.1) - mac 
+    -  確認nvm版本 `nvm ls`，`nvm use v20.11.1`
   - "expo": "~50.0.14",
   - "react": "18.2.0",
   - "react-native": "0.73.6",
   - "react-native-web": "~0.19.6",
   - "react-dom": "18.2.0",
   - "@expo/metro-runtime": "~3.1.3"
+
+
 
 ## Installing - 專案安裝流程
 
