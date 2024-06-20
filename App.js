@@ -89,6 +89,7 @@ function App() {
 
 export default function MyNewApp(){
   return(
+    //StoreContext是redux功能
     <StoreContext.Provider value={store}>
       <App/>
     </StoreContext.Provider>
