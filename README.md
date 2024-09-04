@@ -52,7 +52,7 @@ cd fetchAPI_GoogleAPI-ReactNative
 3. 安裝 npm 套件，在 Terminal 輸入 
 
 ```
-npm init  -y 
+npm install 
 ```
 
 4. 啟動伺服器 指令

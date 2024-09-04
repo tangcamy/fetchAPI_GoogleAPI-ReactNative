@@ -54,7 +54,7 @@ export default function HomeScreen(props) {
         fetchData()
     },[])
     
-    // 講有打勾的addToList資料，更新至Setting主頁
+    // 講有打勾的addToList資料ㄅㄅ，更新至Setting主頁
     useEffect(()=>{
         let getAllAddList = []
         dataSource.map(a=>{
